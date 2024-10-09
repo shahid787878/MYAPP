@@ -1,25 +1,25 @@
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  // Link
+} from "react-router-dom";
 
 function App() {
-function calculateResults(e){
-    console.log('Calculating')
-        const amount =document.getElementById('amount');
-        const interest =document.getElementById('interest');
-        const years =document.getElementById('years');
-        const monthlyPayment =document.getElementById('monthly-payment');
-const totalPayment=document.getElementById('total-payment');
-const totalInterest=document.getElementById('total-interest');
-const principal = parseFloat(amount.value);
-const calculatedInterest = parseFloat(interest.value)/100/12;
-
-const calculatedPayment =parseFloat(years.value)*12;
-
-const x =Math(1+ calculatedInterest, calculatedPayment);
-const monthly =(principal* x * calculatedInterest)/(x-1);
-    e.preventDefault();
-}
   return (
+    <>
+ <Router>
     
-    <div>
+      {/* <Routes>
+      <Route path='/home' element={<Home/>} />
+      <Route path='/about' element={<About/>} />
+      <Route path='/contact' element={<Contact/>} />
+      <Route path='/converter' element={<Today/>} />
+      <Route path='/gallary' element={<Gallary/>} />
+    
+      </Routes> */}
+        <div>
     <h1 className=''>Pesonal Loan Calculator</h1>
     <div className="container-fluid d-flex w-100 border borderd">
       <div className="row-12 w-100 d-block text-start d-md-flex">
@@ -27,9 +27,9 @@ const monthly =(principal* x * calculatedInterest)/(x-1);
            <form action="" id ="loan-form">  <b>Loan Details</b><br></br>
              
              <label > Loan Amount</label>  <input type="number" placeholder="Amount" id="amount" />
-         <label > Intrerest</label> <input type="number" id="interest" placeholder='Interest' />
-             <label > Loan Term</label> <input type="number" id="years" placeholder='Years to repay' />
-<input type="submit" className="btn btn-dark btn-block" value="Calculate" />
+       <br/>  <label > Intrerest</label> <input type="number" id="interest" placeholder='Interest' />
+       <br/>   <label > Loan Term</label> <input type="number" id="years" placeholder='Years to repay' />
+       <br/><input type="submit" className="btn btn-dark btn-block" value="Calculate" />
 
  <p> <input type="number" placeholder="Amount" id="monthly-payment" disabled /></p>
              <p><input placeholder="total-amount" type="number" id='total-amount' disabled/></p>
@@ -70,7 +70,36 @@ const monthly =(principal* x * calculatedInterest)/(x-1);
 
       </div>
     </div>
-  </div>  );
-}
+  </div>
+    
+    </Router>
 
+</>
+  );
+}
 export default App;
+
+// function App() {
+// // function calculateResults(e){
+// //     console.log('Calculating')
+// //         const amount =document.getElementById('amount');
+// //         const interest =document.getElementById('interest');
+// //         const years =document.getElementById('years');
+// //         const monthlyPayment =document.getElementById('monthly-payment');
+// // const totalPayment=document.getElementById('total-payment');
+// // const totalInterest=document.getElementById('total-interest');
+// // const principal = parseFloat(amount.value);
+// // const calculatedInterest = parseFloat(interest.value)/100/12;
+
+// // const calculatedPayment =parseFloat(years.value)*12;
+
+// // const x =Math(1+ calculatedInterest, calculatedPayment);
+// // const monthly =(principal* x * calculatedInterest)/(x-1);
+// //     e.preventDefault();
+// // }
+//   return (
+    
+//   );
+// }
+
+// export default App;
